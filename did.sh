@@ -2,6 +2,7 @@
 
 export DID_PATH=${DID_PATH:-$HOME"/.did"}
 export DID_EDITOR=${DID_EDITOR:-$VISUAL}
+export DID_EXT=${DID_EXT:-"md"}
 export DID_EDITOR_PARAMS=${DID_EDITOR_PARAMS:-""}
 
 local OWN_PATH=$(dirname $0)
@@ -24,7 +25,11 @@ function _did_init_year_dir() {
 function _did_init_week_file() {
   local YEAR=$($OWN_PATH/year.py)
   local WEEK=$($OWN_PATH/week.py)
-  local WEEK_FILE="$YEAR-$WEEK.md"
+  local EXT=$DID_EXT
+  if [ "$EXT" != "" ]; then
+    local EXT=".$EXT"
+  fi
+  local WEEK_FILE="$YEAR-$WEEK$EXT"
   local WEEK_FILE_PATH="$DID_PATH/$YEAR/$WEEK_FILE"
   local JUST_CREATED="no"
   if [ ! -f "$WEEK_FILE_PATH" ]; then

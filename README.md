@@ -26,6 +26,7 @@ To list or search journal.
 ### Options
 
 * `DID_PATH` defaults to `$HOME/.did`
+* `DID_EXT` defaults to `md` (markdown)
 * `DID_EDITOR` defaults to `$VISUAL`
 * `DID_EDITOR_PARAMS` empty by default
 
