@@ -1,4 +1,4 @@
-# did; a weekly journal
+# did; a weekly journal :book:
 
 ### Setup
 
