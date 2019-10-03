@@ -22,13 +22,17 @@ function _did_init_year_dir() {
   fi
 }
 
+function _did_get_ext() {
+  if [ "$DID_EXT" != "" ]; then
+    echo ".$DID_EXT"
+  fi
+  echo ""
+}
+
 function _did_init_week_file() {
   local YEAR=$($OWN_PATH/year.py)
   local WEEK=$($OWN_PATH/week.py)
-  local EXT=$DID_EXT
-  if [ "$EXT" != "" ]; then
-    local EXT=".$EXT"
-  fi
+  local EXT=$(_did_get_ext)
   local WEEK_FILE="$YEAR-$WEEK$EXT"
   local WEEK_FILE_PATH="$DID_PATH/$YEAR/$WEEK_FILE"
   local JUST_CREATED="no"
@@ -50,7 +54,8 @@ function _did_init_week_file() {
 
 function _did_list() {
   array=()
-  find $DID_PATH -name "*.md" -print0 | sort -r > tmpfile
+  local EXT=$(_did_get_ext)
+  find $DID_PATH -name "*$EXT" -print0 | sort -r > tmpfile
   while IFS=  read -r -d $'\0'; do
     array+=("$REPLY")
   done <tmpfile
