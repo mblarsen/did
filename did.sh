@@ -44,6 +44,8 @@ function _did_init_week_file() {
   fi
 
   $DID_EDITOR $DID_EDITOR_PARAMS $WEEK_FILE_PATH
+  echo "$(echo "$(tac "$WEEK_FILE_PATH")" | tac)" > $WEEK_FILE_PATH.tmp
+  mv $WEEK_FILE_PATH.tmp $WEEK_FILE_PATH
 }
 
 function _did_list() {
