@@ -33,6 +33,10 @@ To list or search journal.
 E.g. set `DID_EDITOR_PARAMS` to `normal Go` to have *vim* go to the end of the
 document when opening the journal.
 
+### Syntax highlights
+
+Get [did.vim](https://github.com/mblarsen/did.vim).
+
 ## Disclaimer
 
 This is not my idea. I found an article describing this apporach. However, I
