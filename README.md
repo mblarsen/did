@@ -1,5 +1,7 @@
 # did; a weekly journal :book:
 
+> One week one file to keep yourself in the loop.
+
 ### Setup
 
 Add to your bash or zsh script:
