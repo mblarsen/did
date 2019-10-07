@@ -43,9 +43,13 @@ Get [did.vim](https://github.com/mblarsen/did.vim).
 
 ## Disclaimer
 
-This is not my idea. I found an article describing this apporach. However, I
+This is not my idea. I found an article describing this apporach. ~~However, I
 cannot find it after my laptop was stolen. Please let me know if you think
-you've found it (the article on the laptop).
+you've found it (the article on the laptop).~~
 
-The orignal script was bash based. I've replaced the most complicated parts
-with small python helpers.
+UPDATE: Found it. Here is [the
+article](https://marmelab.com/blog/2018/11/08/a-developers-diary.html) that
+introduced the weekly journal to me.
+
+The orignal script ~~was~~is bash based. I've replaced the most complicated
+parts with small python helpers.
