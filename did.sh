@@ -44,7 +44,7 @@ function _did_init_week_file() {
 
   if [ "$JUST_CREATED" = "yes" ] || ! $OWN_PATH/was_edited_today.py $WEEK_FILE_PATH; then
     local TODAY=$(date '+%A %-d. %B')
-    echo "## $TODAY\n" >> $WEEK_FILE_PATH
+    echo "\n## $TODAY\n" >> $WEEK_FILE_PATH
   fi
 
   $DID_EDITOR $DID_EDITOR_PARAMS $WEEK_FILE_PATH
