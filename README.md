@@ -2,6 +2,8 @@
 
 > One week, one file; to keep yourself in the loop.
 
+![example diary](https://user-images.githubusercontent.com/247048/66284798-db923580-e8f3-11e9-9010-589b849817db.png)
+
 ### Setup
 
 Add to your bash or zsh script:
