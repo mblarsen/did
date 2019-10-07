@@ -62,6 +62,7 @@ function _did_list() {
   rm -f tmpfile
   for JOURNAL in $array; do
     if [ "$1" = "" ]; then
+      echo "\n================================================================================\n";
       cat "$JOURNAL"
     else
       grep --with-filename $1 $JOURNAL
