@@ -15,17 +15,11 @@ source path/to/did/did.sh
 ### Usage
 
 ```
-did
+did                # add new entry
+did ls             # list files
+did grep           # show entries from newest to oldest
+did grep <query>   # show entries matching query
 ```
-
-and:
-
-```
-did ls
-did ls something
-```
-
-To list or search journal.
 
 ### Options
 

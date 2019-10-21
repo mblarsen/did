@@ -52,7 +52,7 @@ function _did_init_week_file() {
   mv $WEEK_FILE_PATH.tmp $WEEK_FILE_PATH
 }
 
-function _did_list() {
+function _did_grep() {
   array=()
   local EXT=$(_did_get_ext)
   find $DID_PATH -name "*$EXT" -print0 | sort -r > tmpfile
@@ -70,10 +70,27 @@ function _did_list() {
   done
 }
 
+function _did_list() {
+  array=()
+  local EXT=$(_did_get_ext)
+  find $DID_PATH -name "*$EXT" -print0 | sort -r > tmpfile
+  while IFS=  read -r -d $'\0'; do
+    array+=("$REPLY")
+  done <tmpfile
+  rm -f tmpfile
+  for JOURNAL in $array; do
+    if [ "$1" = "" ]; then
+      echo "$JOURNAL"
+    fi
+  done
+}
+
 function did() {
   _did_init
   _did_init_year_dir
-  if [ "$1" = "ls" ]; then
+  if [ "$1" = "grep" ]; then
+    _did_grep $2
+  elif [ "$1" = "ls" ]; then
     _did_list $2
   else
     _did_init_week_file
