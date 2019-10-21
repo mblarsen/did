@@ -65,7 +65,7 @@ function _did_grep() {
       echo "\n================================================================================\n";
       cat "$JOURNAL"
     else
-      grep --with-filename $1 $JOURNAL
+      grep --ignore-case --with-filename $1 $JOURNAL
     fi
   done
 }
