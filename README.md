@@ -12,13 +12,19 @@ Add to your bash or zsh script:
 source path/to/did/did.sh
 ```
 
-### Usage
+### CLI
 
 ```
-did                # add new entry
-did ls             # list files
-did grep           # show entries from newest to oldest
-did grep <query>   # show entries matching query
+Usage:
+
+    did [cmd]
+
+Commands:
+
+    (no command)   : open file for current week and add day entry if needed
+
+    ls             : list all week files
+    grep <query>   : show entries from newest to oldest, optionally filtering by query
 ```
 
 ### Options
