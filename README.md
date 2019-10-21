@@ -6,13 +6,15 @@
 
 ### Setup
 
-Add to your bash or zsh script:
+Add the following to your `.bash_profile` or `.zshrc`:
 
 ```
 source path/to/did/did.sh
 ```
 
-### CLI
+### Usage
+
+Files and headers are created automatically on the appropriate times.
 
 ```
 Usage:
@@ -21,10 +23,10 @@ Usage:
 
 Commands:
 
-    (no command)   : open file for current week and add day entry if needed
+    (no command)   : opens the current week-file en editor
 
-    ls             : list all week files
-    grep <query>   : show entries from newest to oldest, optionally filtering by query
+    ls             : lists all week files
+    grep <query>   : shows entries from newest to oldest, optionally filtering by query
 ```
 
 ### Options
@@ -43,7 +45,7 @@ Get [did.vim](https://github.com/mblarsen/did.vim).
 
 ## Disclaimer
 
-This is not my idea. I found an article describing this apporach. ~~However, I
+This is not my idea. I found an article describing this approach. ~~However, I
 cannot find it after my laptop was stolen. Please let me know if you think
 you've found it (the article on the laptop).~~
 
@@ -51,5 +53,5 @@ UPDATE: Found it. Here is [the
 article](https://marmelab.com/blog/2018/11/08/a-developers-diary.html) that
 introduced the weekly journal to me.
 
-The orignal script ~~was~~is bash based. I've replaced the most complicated
+The original script ~~was~~is bash based. I've replaced the most complicated
 parts with small python helpers.
