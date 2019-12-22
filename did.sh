@@ -5,8 +5,8 @@ export DID_EDITOR=${DID_EDITOR:-$VISUAL}
 export DID_EXT=${DID_EXT:-"md"}
 export DID_EDITOR_PARAMS=${DID_EDITOR_PARAMS:-""}
 
-local OWN_PATH=$(dirname $0)
-local OWN_PATH=$(realpath $OWN_PATH)
+export DID_BIN_PATH=$(dirname $0)
+export DID_BIN_PATH=$(realpath $DID_BIN_PATH)
 
 function _did_init() {
   if [ ! -d "$DID_PATH" ]; then
@@ -16,7 +16,7 @@ function _did_init() {
 }
 
 function _did_init_year_dir() {
-  local YEAR=$($OWN_PATH/year.py)
+  local YEAR=$($DID_BIN_PATH/year.py)
   if [ ! -d "$DID_PATH/$YEAR" ]; then
     mkdir "$DID_PATH/$YEAR"
   fi
@@ -30,8 +30,8 @@ function _did_get_ext() {
 }
 
 function _did_init_week_file() {
-  local YEAR=$($OWN_PATH/year.py)
-  local WEEK=$($OWN_PATH/week.py)
+  local YEAR=$($DID_BIN_PATH/year.py)
+  local WEEK=$($DID_BIN_PATH/week.py)
   local EXT=$(_did_get_ext)
   local WEEK_FILE="$YEAR-$WEEK$EXT"
   local WEEK_FILE_PATH="$DID_PATH/$YEAR/$WEEK_FILE"
@@ -42,7 +42,7 @@ function _did_init_week_file() {
     echo "Created file: $WEEK_FILE_PATH"
   fi
 
-  if [ "$JUST_CREATED" = "yes" ] || ! $OWN_PATH/was_edited_today.py $WEEK_FILE_PATH; then
+  if [ "$JUST_CREATED" = "yes" ] || ! $DID_BIN_PATH/was_edited_today.py $WEEK_FILE_PATH; then
     local TODAY=$(date '+%A %-d. %B')
     echo "\n## $TODAY\n" >> $WEEK_FILE_PATH
   fi
